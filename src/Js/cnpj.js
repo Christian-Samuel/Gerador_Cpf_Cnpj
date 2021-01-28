@@ -1,31 +1,29 @@
-var CPF_GERADO=[];
+var CNPJ_GERADO=[];
     
 /*EVENTOS*/
 btn_gerar.onclick = ()=>
 {
-    CPF_GERADO=[];
-    salvarNumeros(9);
+    CNPJ_GERADO=[];
+    salvarNumeros(8);
     calcDigito1();
     calcDigito2();
     lbl_gerado.innerText = gerarPontuacao();
 }
+
 btn_verificar.onclick = ()=>
 {
-    CPF_GERADO=[];
+    CNPJ_GERADO=[];
     temp = txt_digitado.value;
 
     for(x=0;x<temp.length; x++)
     {
-        CPF_GERADO[x] = temp[x];
+        CNPJ_GERADO[x] = temp[x];
     }
-    
 
-    if(txt_digitado.value[txt_digitado.value.length-2]==calcDigito1(CPF_GERADO) && txt_digitado.value[txt_digitado.value.length-1]==calcDigito2(CPF_GERADO))
-        alert("CPF Valido!");
+    if(txt_digitado.value[txt_digitado.value.length-2]==calcDigito1(CNPJ_GERADO) && txt_digitado.value[txt_digitado.value.length-1]==calcDigito2(CNPJ_GERADO))
+        alert("CNPJ Valido!");
     else
-        alert("CPF Invalido!");
-    
-
+        alert("CNPJ Invalido!");
 }
 
 txt_digitado.oninput =()=>
@@ -33,33 +31,33 @@ txt_digitado.oninput =()=>
     if(!(txt_digitado.value[txt_digitado.value.length-1]>=0 && txt_digitado.value[txt_digitado.value.length-1]<=9))
         txt_digitado.value = txt_digitado.value.substring(0,txt_digitado.value.length-1);
 
-    if(txt_digitado.value.length>11)
+    if(txt_digitado.value.length>10)
         txt_digitado.value = txt_digitado.value.substring(0,txt_digitado.value.length-1);
 }
 
 function gerarPontuacao(s_n)
 {
-    CPF="";
-   
-    for(x=0; x<CPF_GERADO.length; x++)
+    CNPJ="";
+    
+    for(x=0; x<CNPJ_GERADO.length; x++)
     {
-        if(x==3 || x==6)
-            CPF+=".";
+        if(x==2 || x==5)
+            CNPJ+=".";
             
-        if(x==9)
-            CPF+="-";
+        if(x==8)
+            CNPJ+="/0001-";
 
-        CPF+=CPF_GERADO[x];
+        CNPJ+=CNPJ_GERADO[x];
     }
     
-    return CPF;
+    return CNPJ;
 }
 
 function salvarNumeros(digitos)
 {
     for(x=0; x<digitos; x++)
     {
-        CPF_GERADO.push(numAleatorio());
+        CNPJ_GERADO.push(numAleatorio());
     }
 }
 
@@ -75,22 +73,27 @@ function calcDigito1()
     soma=0;
     y=0;
 
-    for(x=10; x>=2; x--)
-    {
-        soma += (x*CPF_GERADO[y]);
+    for(x=5; x!=6; x--)
+    {   
+        soma += (x*CNPJ_GERADO[y]);
         y++;
-    }
 
+        if(x==2)
+           x=10;
+
+    }
+    soma += (6*CNPJ_GERADO[y])+2;
+    
     digito = soma%11;
 
     if(digito<=1)
     {
-        CPF_GERADO.push(0);
+        CNPJ_GERADO.push(0);
         return 0;
     }
     else
     {
-        CPF_GERADO.push(11-digito);
+        CNPJ_GERADO.push(11-digito);
         return 11-digito;
     }
 }
@@ -100,22 +103,26 @@ function calcDigito2()
     soma=0;
     y=0;
 
-    for(x=11; x>=2; x--)
-    {
-        soma += (x*CPF_GERADO[y]);
+    for(x=6; x!=7; x--)
+    {   
+        soma += (x*CNPJ_GERADO[y]);
         y++;
+
+        if(x==2)
+           x=10;
     }
 
+    soma += (7*CNPJ_GERADO[y])+(2*CNPJ_GERADO[CNPJ_GERADO.length-1])+3;
     digito = soma%11;
-
+    
     if(digito<=1)
     {
-        CPF_GERADO.push(0);
+        CNPJ_GERADO.push(0);
         return 0;
     }
     else
     {
-        CPF_GERADO.push(11-digito);
+        CNPJ_GERADO.push(11-digito);
         return 11-digito;
     }
 }

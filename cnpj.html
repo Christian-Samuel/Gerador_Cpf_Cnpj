@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="src/Css/index.css">
     
 
-    <title>Gerar/Verificar CPF</title>
+    <title>Gerar/Verificar CNPJ</title>
 </head>
 
 <body>
@@ -31,8 +31,8 @@
         <div class="col-8" id="informacoes">
             <div class="card border-light bg-dark text-white text-center">
                 <div class="card-body">
-                CPF gerado não é necessariamente um CPF ativo na Receita Federal. É apenas uma combinação
-                de 9 numeros e seus 2 digitos verificadores.
+                CNPJ gerado não é necessariamente um CNPJ ativo na Receita Federal. É apenas uma combinação
+                de 12 numeros e seus 2 digitos verificadores.
                 </div>
             </div>
         </div>
@@ -43,11 +43,11 @@
             <div class="col-4" id="gerar">
                 <div class="card text-dark bg-light text-center border-dark" >
                     <div class="card-header">
-                      Gerar CPF
+                      Gerar CNPJ
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Gerar um numero de CPF valido</h5>
-                      <p class="card-text" id="lbl_gerado">000.000.000-00</p>
+                      <h5 class="card-title">Gerar um numero de CNPJ valido</h5>
+                      <p class="card-text" id="lbl_gerado">00.000.000/0000-00</p>
                       <button class="btn btn-dark" type="button" id="btn_gerar">Gerar Agora!</button>
                     </div>
                 </div>  
@@ -56,12 +56,12 @@
             <div class="col-4" id="verificar">          
                 <div class="card text-dark bg-light text-center border-dark">
                     <div class="card-header">
-                      Verificar CPF
+                      Verificar CNPJ
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Verificar se o CPF é valido</h5>
+                      <h5 class="card-title">Verificar se o CNPJ é valido.<br> OBS: Não inserir o codigo da matriz</h5>
                       <div class="input-group mb-3">
-                        <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">CPF:</span>
+                        <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">CNPJ:</span>
                         <input id="txt_digitado" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                       </div>
                       <button class="btn btn-dark" type="button" id="btn_verificar">Verificar Agora!</button>
@@ -72,7 +72,7 @@
 </div>
 
 
-<script src="src/Js/cpf.js"></script>
+<script src="src/Js/cnpj.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 

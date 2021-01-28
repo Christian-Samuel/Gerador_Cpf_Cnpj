@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="src/Css/index.css">
     
 
-    <title>Gerar/Verificar CPF</title>
+    <title>Gerar/Verificar Titutlo de Eleitor</title>
 </head>
 
 <body>
 
-<div class="container bg-success" style="height: 450px;">
+<div class="container bg-success">
 
     <div class="row">
         <nav class="navbar navbar-light bg-dark">
@@ -40,28 +40,61 @@
 
     <div class="row justify-content-evenly">
 
-            <div class="col-4" id="gerar">
+            <div class="col-md-4 col-sm-8" id="gerar" style="margin-bottom: 30px;">
                 <div class="card text-dark bg-light text-center border-dark" >
                     <div class="card-header">
-                      Gerar CPF
+                      Gerar Titulo de Eleitor
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Gerar um numero de CPF valido</h5>
-                      <p class="card-text" id="lbl_gerado">000.000.000-00</p>
+                      <h5 class="card-title">Gerar um numero de Titulo de Eleitor valido</h5>
+                      <div class="form-floating">
+                        <select class="form-select" id="UFSelect" aria-label="Floating label select example">
+                          <option selected>Indeferente</option>
+                          <option value="01">SP</option>
+                          <option value="02">MG</option>
+                          <option value="03">RJ</option>
+                          <option value="04">RS</option>
+                          <option value="05">BA</option>
+                          <option value="06">PR</option>
+                          <option value="07">CE</option>
+                          <option value="08">PE</option>
+                          <option value="09">SC</option>
+                          <option value="10">GO</option>
+                          <option value="11">MA</option>
+                          <option value="12">PB</option>
+                          <option value="13">PA</option>
+                          <option value="14">ES</option>
+                          <option value="15">PI</option>
+                          <option value="16">RN</option>
+                          <option value="17">AL</option>
+                          <option value="18">MT</option>
+                          <option value="19">MS</option>
+                          <option value="20">DF</option>
+                          <option value="21">SE</option>
+                          <option value="22">AM</option>
+                          <option value="23">RO</option>
+                          <option value="24">AC</option>
+                          <option value="25">AP</option>
+                          <option value="26">RR</option>
+                          <option value="27">TO</option>
+                        </select>
+                        <label for="UFSelect">Unidade Federativa</label>
+                      </div>
+                      <p class="card-text" id="lbl_gerado">0000 0000 0000</p>
                       <button class="btn btn-dark" type="button" id="btn_gerar">Gerar Agora!</button>
                     </div>
                 </div>  
             </div>
 
-            <div class="col-4" id="verificar">          
+            <div class="col-md-4 col-sm-8" id="gerar" style="margin-bottom: 30px;">
                 <div class="card text-dark bg-light text-center border-dark">
                     <div class="card-header">
-                      Verificar CPF
+                      Verificar Titulo de Eleitor
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Verificar se o CPF é valido</h5>
+                      <h5 class="card-title">Verificar se o Titulo de Eleitor é valido</h5>
                       <div class="input-group mb-3">
-                        <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">CPF:</span>
+                        <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">Titulo<br> de<br> Eleitor:</span>
                         <input id="txt_digitado" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                       </div>
                       <button class="btn btn-dark" type="button" id="btn_verificar">Verificar Agora!</button>
@@ -72,7 +105,7 @@
 </div>
 
 
-<script src="src/Js/cpf.js"></script>
+<script src="src/Js/tit_ele.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 

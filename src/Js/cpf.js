@@ -19,10 +19,13 @@ btn_verificar.onclick = ()=>
         CPF_GERADO[x] = temp[x];
     }
     
-    if(txt_digitado.value[txt_digitado.value.length-2]==calcDigito1(CPF_GERADO).toString() && txt_digitado.value[txt_digitado.value.length-1]==calcDigito2(CPF_GERADO).toString())
+
+    if(txt_digitado.value[txt_digitado.value.length-2]==calcDigito1(CPF_GERADO) && txt_digitado.value[txt_digitado.value.length-1]==calcDigito2(CPF_GERADO))
         alert("CPF Valido!");
     else
         alert("CPF Invalido!");
+    
+
 }
 
 txt_digitado.oninput =()=>
@@ -81,7 +84,7 @@ function calcDigito1()
     if(digito<=1)
     {
         CPF_GERADO.push(0);
-        return digito;
+        return 0;
     }
     else
     {
@@ -106,7 +109,7 @@ function calcDigito2()
     if(digito<=1)
     {
         CPF_GERADO.push(0);
-        return digito;
+        return 0;
     }
     else
     {

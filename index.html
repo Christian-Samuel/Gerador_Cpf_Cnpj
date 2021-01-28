@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <!--BootStrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="src/Css/index.css">
+    
+    <title>Gerar/Verificar CPF</title>
+</head>
+
+<body>
+
+<div class="container bg-success">
+
+    <div class="row">
+        <nav class="navbar navbar-light bg-dark">
+            <form class="container-fluid justify-content-center">
+              <button class="btn btn-outline-success me-2" type="button">CPF</button>
+              <button class="btn btn-outline-success me-2" type="button">CNPJ</button>
+              <button class="btn btn-outline-success me-2" type="button">Titulo de Eleitor</button>
+            </form>
+          </nav>
+    </div>
+
+    <div class="row justify-content-evenly">
+        <div class="col-8" id="informacoes">
+            <div class="card border-light bg-dark text-white text-center">
+                <div class="card-body">
+                CPF gerado não é necessariamente um CPF ativo na Receita Federal. É apenas uma combinação
+                de 9 numeros e seus 2 digitos verificadores.
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-evenly">
+
+            <div class="col-4" id="gerar">
+                <div class="card text-dark bg-light text-center border-dark" >
+                    <div class="card-header">
+                      Gerar CPF
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Gerar um numero de CPF valido</h5>
+                      <p class="card-text" id="lbl_gerado">000.000.000-00</p>
+                      <button class="btn btn-dark" type="button" id="btn_gerar">Gerar Agora!</button>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-4" id="verificar">          
+                <div class="card text-dark bg-light text-center border-dark">
+                    <div class="card-header">
+                      Verificar CPF
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Verificar se o CPF é valido</h5>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">CPF:</span>
+                        <input id="txt_digitado" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
+                      <button class="btn btn-dark" type="button" id="btn_verificar">Verificar Agora!</button>
+                    </div>
+                </div>  
+            </div>
+    </div>
+</div>
+
+
+<script src="src/Js/cpf.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+
+</html>
